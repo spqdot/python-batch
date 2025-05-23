@@ -1,9 +1,5 @@
 # Use the official Python image as a base
-FROM python:3.11-slim
-
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+FROM python:3.12-slim
 
 # Install system dependencies
 RUN apt-get update && \
@@ -18,10 +14,10 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy requirements
-COPY requirements.txt ./
+COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . .
