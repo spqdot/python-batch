@@ -26,7 +26,7 @@ def save_data_to_server(df):
         df.to_sql(name='price_data_temp', con=conn, if_exists='replace', index=False)
 
         create_table = """
-        if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'price_data')
+        if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'price_data' and TABLE_SCHEMA = 'sab')
         CREATE TABLE sab.[price_data](
             [SYMBOL] [varchar](max) NULL,
             [SERIES] [varchar](max) NULL,
