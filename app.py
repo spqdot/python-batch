@@ -1,4 +1,4 @@
-# Hello Shrabani - Yes Amit 2
+# Hello Shrabani - Yes Amit
 from sqlalchemy import create_engine, text
 import pandas as pd
 import streamlit as st
